@@ -22,8 +22,15 @@ drawbuffer.text((20, 20), 'from Pythonista app @tenyawanya', fill='red', font=fo
 #img2= Image.open('re2.png', 'r')
 #img1.paste(img2, (680, 400), img2.split()[3])
 
-saveit = photos.save_image(img1)
+# 撮影した画像をそのまま保存する場合はアンコメント
+#saveit = photos.save_image(img1)
+#img1.show()
+# ここまで
 
-img1.show()
-if saveit is True:
+# 正方形の画像として保存したい場合
+crop_img = img1.resize((0, 0, 3024, 3024))
+saveit = photos.save_image(crop_img)
+crop_img.show()
+# ここまで
+if saveit_re is True:
      print ("saved")
